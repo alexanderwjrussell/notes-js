@@ -1,12 +1,9 @@
-function testNoteText () {
-  var note = new Note()
-  var text = "I love JavaScript";
-  note.getText(text);
-  if (note.text === text) {
-    console.log('Text can equal text: True')
-  } else {
-    console.log('Text can equal text: False')
-  }
+var note = require('../src/note-model').Note;
+var isTrue = require('../lib/test-framework').isTrue;
+
+function testNoteText (text) {
+  note = new Note(text);
+  isTrue(note.text === text);
 }
 
-testNoteText()
+testNoteText("I love JavaScript");
