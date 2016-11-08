@@ -1,9 +1,10 @@
 function testNoteView(text) {
   var notelist = new NoteList();
+  text = {text: "A random string"};
   notelist.saveNote(text);
-  // var noteView = new NoteView();
   notelist.printList();
-  assert.isTrue(notelist.notebook[0] === text);
+  list = document.getElementById('noteList');
+  assert.isTrue(list.innerHTML === "<li>A random string</li>");
 }
 
 testNoteView("A random string");
