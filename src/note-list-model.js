@@ -1,18 +1,19 @@
 (function(exports) {
 
-  function Notes() {
-  this.notes = [];
+  function NoteList() {
+  this.notebook = [];
   }
 
-  Notes.prototype.saveNote = function (note) {
-    this.notes.push(note);
+  NoteList.prototype.saveNote = function (note) {
+    this.notebook.push(note);
   };
 
-  Notes.prototype.getNotes = function (index) {
-    return this.notes[index];
+  NoteList.prototype.getNotes = function (index) {
+    return this.notebook[index];
   };
 
-  exports.Notes = Notes;
+  exports.NoteList = NoteList;
+  exports.notebook = this.notebook;
   exports.saveNote = this.saveNote;
   exports.getNotes = this.getNotes;
 })(this);
